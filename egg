@@ -49,3 +49,13 @@
       event-set__2="_event: mouseleave; color: black"></a-cursor>
   </a-entity>
 </a-scene>
+
+CSS
+#textToDisplay {
+  width: 300px;
+  height: 300px;
+  top: 20px;
+  position: absolute;
+  z-index: -1;
+  background: transparent;
+}
