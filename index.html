@@ -48,4 +48,11 @@
         <a-cursor id="cursor" animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150" animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500" event-set__1="_event: mouseenter; color: #0092d8"
                   event-set__2="_event: mouseleave; color: black"></a-cursor>
     </a-entity>
+    
+    <!--3D model for cow-->
+      <a-assets>
+        <a-asset-item id="cow-obj" src="https://cdn.glitch.com/5a53765b-cdc1-4fc2-8061-a821a0ba0db5%2FCow.obj?1544454952447"></a-asset-item>
+        <a-asset-item id="cow-mtl" src="https://cdn.glitch.com/5a53765b-cdc1-4fc2-8061-a821a0ba0db5%2FCow.mtl?1544455115123"></a-asset-item>
+      </a-assets>
+      <a-entity obj-model="obj: #cow-obj; mtl: #cow-mtl"></a-entity> 
 </a-scene>
