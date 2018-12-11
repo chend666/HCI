@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-sky color="#6EBAA7"></a-sky>
+      <a-assets>
+        <a-asset-item id="cow-obj" src="https://cdn.glitch.com/5a53765b-cdc1-4fc2-8061-a821a0ba0db5%2FCow.obj?1544454952447"></a-asset-item>
+        <a-asset-item id="cow-mtl"></a-asset-item>
+      </a-assets>
+      <a-entity <a-entity position="-3 2 -10" obj-model="obj: #cow-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.01 0.01 0.01" >
+      <a-animation attribute="position" from="-3 0 -20" to="-3 0 10" dur="10000"
+               repeat="indefinite"></a-animation> </a-entity> 
+    </a-entity>
+    </a-scene>
+  </body>
+</html>
