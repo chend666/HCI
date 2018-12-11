@@ -14,3 +14,6 @@
     </a-scene>
   </body>
 </html>
+
+
+ <a-entity obj-model="obj: #hall-obj;" material="color: yellow; roughness : 0.1"></a-entity>
