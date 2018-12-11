@@ -1,0 +1,8 @@
+#textToDisplay {
+    width: 300px;
+    height: 300px;
+    top: 20px;
+    position: absolute;
+    z-index: -1;
+    background: transparent;
+}
