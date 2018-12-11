@@ -8,12 +8,9 @@
       <a-sky color="#6EBAA7"></a-sky>
       <a-assets>
         <a-asset-item id="cow-obj" src="https://cdn.glitch.com/5a53765b-cdc1-4fc2-8061-a821a0ba0db5%2FCow.obj?1544454952447"></a-asset-item>
-        <a-asset-item id="cow-mtl" src="https://cdn.glitch.com/5a53765b-cdc1-4fc2-8061-a821a0ba0db5%2FCow.mtl?1544455115123"></a-asset-item>
+        <a-asset-item id="cow-mtl"></a-asset-item>
       </a-assets>
-      <a-entity obj-model="obj: #cow-obj; mtl: #cow-mtl"></a-entity> 
+      <a-entity position="-3 2 -10" obj-model="obj: #cow-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.01 0.01 0.01" ></a-entity> 
     </a-scene>
   </body>
 </html>
-
-
- <a-entity obj-model="obj: #hall-obj;" material="color: yellow; roughness : 0.1"></a-entity>
