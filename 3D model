@@ -10,10 +10,12 @@
         <a-asset-item id="cow-obj" src="https://cdn.glitch.com/5a53765b-cdc1-4fc2-8061-a821a0ba0db5%2FCow.obj?1544454952447"></a-asset-item>
         <a-asset-item id="chiken-obj" src="https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2Fchicken_01.obj?1544549572956"></a-asset-item>
         <a-asset-item id="sheep-obj" src="https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2F10_Capricorn.obj?1544549583434"></a-asset-item>
+        <a-asset-item id="egg-obj" src="https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2Fegg.obj?1544549573776"></a-asset-item>
       </a-assets>
-      <a-entity position="-3 2 -10" obj-model="obj: #cow-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.01 0.01 0.01" ></a-entity> 
+      <a-entity position="-3 0 -10" obj-model="obj: #cow-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.01 0.01 0.01" ></a-entity> 
       <a-entity position="-8 0 -10" obj-model="obj: #chiken-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.1 0.1 0.1" ></a-entity> 
-      <a-entity position="-15 0 -10" obj-model="obj: #sheep-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.1 0.1 0.1" ></a-entity> 
+      <a-entity position="-15 0 -10" obj-model="obj: #sheep-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.1 0.1 0.1" ></a-entity>
+      <a-entity position="-18 0 -10" obj-model="obj: #egg-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.1 0.1 0.1" ></a-entity>
     </a-scene>
   </body>
 </html>
