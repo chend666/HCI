@@ -32,7 +32,7 @@
                 setTimeout(function(){
                     alert('Congratulation! You have a chicken!');
                     window.location.reload();
-                },2000);
+                },1000);
             });
         }
     });
@@ -52,7 +52,7 @@
     <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
 
     <!--music-->
-    <a-entity id="river" sound="src: url(https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2F%E9%BB%84%E4%BB%81%E7%83%81%20-%20%E8%B7%B3%E8%88%9E%E7%9A%84%E7%BA%BF%20-%20%E9%92%A2%E7%90%B4.mp3?1544551242028); autoplay: true"></a-entity>
+    <a-entity id="river" sound="src: url(https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2F%E9%BB%84%E4%BB%81%E7%83%81%20-%20%E8%B7%B3%E8%88%9E%E7%9A%84%E7%BA%BF%20-%20%E9%92%A2%E7%90%B4.mp3?1544551242028); autoplay: true; loop: true;"></a-entity>
 
     <!--egg object-->
     <a-assets>
@@ -61,7 +61,7 @@
 
     <!--chicken animation-->
     <a-entity hide-on-click="target:#chickenAnimate">
-        <a-entity position="-3 0.4 -10" obj-model="obj: #egg-obj; mtl: #cow-mtl" material="color: white; roughness : 0.1" scale="0.9 0.9 0.9" ></a-entity>
+        <a-entity position="-3 0.4 -10" obj-model="obj: #egg-obj; mtl: #cow-mtl" material="color: white; roughness : 0.1" scale="0.3 0.3 0.3" ></a-entity>
     </a-entity>
     <a-entity id="chickenAnimate" visible="false"></a-entity>
 
@@ -73,19 +73,19 @@
         <a-asset-item id="egg-obj" src="https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2Fegg.obj?1544549573776"></a-asset-item>
     </a-assets>
 
-    <a-entity position="3 0 -10" obj-model="obj: #cow-obj; mtl: #cow-mtl" material="color: red; roughness : 0.1" scale="0.01 0.01 0.01" >
-        <a-animation attribute="position" from="5 0 -50" to="5 0 10" dur="30000" repeat="indefinite"></a-animation>
+    <a-entity position="3 0 -10" obj-model="obj: #cow-obj; mtl: #cow-mtl" material="color: #A0522D; roughness : 0.1" scale="0.01 0.01 0.01" >
+        <a-animation attribute="position" from="5 0 -20" to="5 0 10" dur="30000" repeat="indefinite"></a-animation>
     </a-entity>
-    <a-entity position="-8 0 -8" obj-model="obj: #chicken-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.07 0.07 0.07" ></a-entity>
-    <a-entity position="-26 0.5 -10" obj-model="obj: #sheep-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.1 0.1 0.1" ></a-entity>
-    <a-entity position="-18 0 -10" obj-model="obj: #egg-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.05 0.05 0.05" ></a-entity>
+    <a-entity rotation="180 90 180" position="-8 0 -8" obj-model="obj: #chicken-obj; mtl: #cow-mtl" material="color: #A52A2A; roughness : 0.1" scale="0.04 0.04 0.04" ></a-entity>
+    <a-entity rotation="180 90 180" position="9 0 9" obj-model="obj: #sheep-obj; mtl: #cow-mtl" material="color: #BC8F8F; roughness : 0.1" scale="0.1 0.1 0.1" ></a-entity>
+    <a-entity position="-18 0 -10" obj-model="obj: #egg-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.00005 0.00005 0.00005" ></a-entity>
 
-    <!--good luck to fuck-->
-    <a-assets>
-        <a-asset-item id="tree" src="/HCI/scene.gltf"></a-asset-item>
-    </a-assets>
+    <!--&lt;!&ndash;good luck to fuck&ndash;&gt;-->
+    <!--<a-assets>-->
+        <!--<a-asset-item id="tree" src="/HCI/scene.gltf"></a-asset-item>-->
+    <!--</a-assets>-->
 
-    <a-entity gltf-model="#tree" position="2 2 2"></a-entity>
+    <!--<a-entity gltf-model="#tree" position="2 2 2"></a-entity>-->
 
     <!--text-->
     <a-text value="Relaxing Farm" position="-150 60 -100" width="1000" color="white"></a-text>
