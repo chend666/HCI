@@ -29,40 +29,67 @@
             var el = this.el;
             el.addEventListener('click', function () {
                 el.setAttribute('visible', false);
-                alert('Congratulation! You have a chicken!');;
+                setTimeout(function(){
+                    alert('Congratulation! You have a chicken!');
+                    window.location.reload();
+                },2000);
             });
         }
     });
 </script>
 
 <a-scene>
-    <a-entity camera look-controls wasd-controls position="0 1.6 0"></a-entity>
+    <!--camera and cursor-->
+    <a-entity camera look-controls wasd-controls position="0 1.6 0">
+        <a-cursor id="cursor" animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+                  animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+                  event-set__1="_event: mouseenter; color: #0092d8"
+                  event-set__2="_event: mouseleave; color: black">
+        </a-cursor>
+    </a-entity>
+
+    <!--environment-->
     <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
 
+    <!--music-->
+    <a-entity id="river" sound="src: url(https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2F%E9%BB%84%E4%BB%81%E7%83%81%20-%20%E8%B7%B3%E8%88%9E%E7%9A%84%E7%BA%BF%20-%20%E9%92%A2%E7%90%B4.mp3?1544551242028); autoplay: true"></a-entity>
+
+    <!--egg object-->
     <a-assets>
         <a-asset-item id="egg-obj" src="https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2Fegg.obj?1544549573776"></a-asset-item>
     </a-assets>
+
+    <!--chicken animation-->
     <a-entity hide-on-click="target:#chickenAnimate">
         <a-entity position="-3 0.4 -10" obj-model="obj: #egg-obj; mtl: #cow-mtl" material="color: white; roughness : 0.1" scale="0.9 0.9 0.9" ></a-entity>
     </a-entity>
-    <a-entity id="chickenAnimate" visible="false">
-    </a-entity>
+    <a-entity id="chickenAnimate" visible="false"></a-entity>
+
+    <!--the other obj objects-->
     <a-assets>
         <a-asset-item id="cow-obj" src="https://cdn.glitch.com/5a53765b-cdc1-4fc2-8061-a821a0ba0db5%2FCow.obj?1544454952447"></a-asset-item>
-        <a-asset-item id="chiken-obj" src="https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2Fchicken_01.obj?1544549572956"></a-asset-item>
+        <a-asset-item id="chicken-obj" src="https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2Fchicken_01.obj?1544549572956"></a-asset-item>
         <a-asset-item id="sheep-obj" src="https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2F10_Capricorn.obj?1544549583434"></a-asset-item>
         <a-asset-item id="egg-obj" src="https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2Fegg.obj?1544549573776"></a-asset-item>
     </a-assets>
-    <a-entity position="3 0 -10" obj-model="obj: #cow-obj; mtl: #cow-mtl" material="color: red; roughness : 0.1" scale="0.01 0.01 0.01" ></a-entity>
-    <a-entity position="-8 0 -8" obj-model="obj: #chiken-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.07 0.07 0.07" ></a-entity>
+
+    <a-entity position="3 0 -10" obj-model="obj: #cow-obj; mtl: #cow-mtl" material="color: red; roughness : 0.1" scale="0.01 0.01 0.01" >
+        <a-animation attribute="position" from="5 0 -50" to="5 0 10" dur="30000" repeat="indefinite"></a-animation>
+    </a-entity>
+    <a-entity position="-8 0 -8" obj-model="obj: #chicken-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.07 0.07 0.07" ></a-entity>
     <a-entity position="-26 0.5 -10" obj-model="obj: #sheep-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.1 0.1 0.1" ></a-entity>
     <a-entity position="-18 0 -10" obj-model="obj: #egg-obj; mtl: #cow-mtl" material="color: grey; roughness : 0.1" scale="0.05 0.05 0.05" ></a-entity>
+
+    <!--good luck to fuck-->
+    <a-assets>
+        <a-asset-item id="tree" src="/HCI/scene.gltf"></a-asset-item>
+    </a-assets>
+
+    <a-entity gltf-model="#tree" position="2 2 2"></a-entity>
+
+    <!--text-->
     <a-text value="Relaxing Farm" position="-150 60 -100" width="1000" color="white"></a-text>
-    <!-- Camera + cursor. -->
-    <a-entity  position="0 3 0" camera look-controls>
-        <a-cursor id="cursor" animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150" animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500" event-set__1="_event: mouseenter; color: #0092d8"
-                  event-set__2="_event: mouseleave; color: black"></a-cursor>
-    </a-entity>
+
 </a-scene>
 
 
