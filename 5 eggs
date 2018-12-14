@@ -1,0 +1,4 @@
+<a-entity position="-6 0.4 -15" obj-model="obj: #egg-obj; mtl: #cow-mtl" material="color: white; roughness : 0.1" scale="0.3 0.3 0.3" ></a-entity>
+   <a-entity position="6 0.4 15" obj-model="obj: #egg-obj; mtl: #cow-mtl" material="color: white; roughness : 0.1" scale="0.3 0.3 0.3" ></a-entity>
+   <a-entity position="12 0.4 0" obj-model="obj: #egg-obj; mtl: #cow-mtl" material="color: white; roughness : 0.1" scale="0.3 0.3 0.3" ></a-entity>
+   <a-entity position="-4 0.4 0" obj-model="obj: #egg-obj; mtl: #cow-mtl" material="color: white; roughness : 0.1" scale="0.3 0.3 0.3" ></a-entity>
