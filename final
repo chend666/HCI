@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>VR</title>
+    <meta name="description" content="VR">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<body>
+
+<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+
+<script>
+    swal("Welcome!", "Please try to find an egg and click on it!");
+    /* global AFRAME */
+
+    AFRAME.registerComponent('hide-on-click', {
+        dependencies: ['raycaster'],
+        schema: {
+            target: {type: 'selector'}
+        },
+        init: function () {
+            var data = this.data;
+            var el = this.el;
+            el.addEventListener('click', function () {
+                el.setAttribute('visible', false);
+                setTimeout(function(){
+                    alert('Congratulation! You just got yourself a chicken!');
+                    window.location.reload();
+                },1000);
+            });
+        }
+    });
+</script>
+
+<a-scene>
+    <!--camera and cursor-->
+    <a-entity camera look-controls wasd-controls position="0 1.6 0">
+        <a-cursor id="cursor" animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+                  animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+                  event-set__1="_event: mouseenter; color: #0092d8"
+                  event-set__2="_event: mouseleave; color: black">
+        </a-cursor>
+    </a-entity>
+
+    <!--environment-->
+    <a-entity environment="preset: forest; dressingAmount: 500"></a-entity>
+
+    <!--music-->
+    <a-entity id="river" sound="src: url(https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2F%E9%BB%84%E4%BB%81%E7%83%81%20-%20%E8%B7%B3%E8%88%9E%E7%9A%84%E7%BA%BF%20-%20%E9%92%A2%E7%90%B4.mp3?1544551242028); autoplay: true; loop: true;"></a-entity>
+
+    <!--chicken animations-->
+    <a-entity id="chickenAnimate" visible="false"></a-entity>
+
+    <a-entity hide-on-click="target:#chickenAnimate">
+        <a-entity position="-3 0.4 -10" obj-model="obj: #egg-obj; mtl: #cow-mtl" material="color: white; roughness : 0.1" scale="0.3 0.3 0.3" ></a-entity>
+    </a-entity>
+
+    <!--obj objects-->
+    <a-assets>
+        <a-asset-item id="egg-obj" src="https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2Fegg.obj?1544549573776"></a-asset-item>
+        <a-asset-item id="cow-obj" src="https://cdn.glitch.com/5a53765b-cdc1-4fc2-8061-a821a0ba0db5%2FCow.obj?1544454952447"></a-asset-item>
+        <a-asset-item id="chicken-obj" src="https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2Fchicken_01.obj?1544549572956"></a-asset-item>
+        <a-asset-item random-position="min: -10 -10 -10; max: 10 10 10;" id="sheep-obj" src="https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2F10_Capricorn.obj?1544549583434"></a-asset-item>
+        <a-asset-item id="egg-obj" src="https://cdn.glitch.com/1c9b83f9-e8c7-4387-9550-73bbec5cedfe%2Fegg.obj?1544549573776"></a-asset-item>
+    </a-assets>
+
+    <!--cow animation-->
+    <a-entity obj-model="obj: #cow-obj; mtl: #cow-mtl" material="color: #A0522D; roughness : 0.1" scale="0.01 0.01 0.01" >
+        <a-animation attribute="position" from="5 0 -20" to="5 0 10" dur="30000" repeat="indefinite"></a-animation>
+    </a-entity>
+
+    <!--the chickens-->
+    <a-entity rotation="180 90 180" position="-8 0 -8" obj-model="obj: #chicken-obj; mtl: #cow-mtl" material="color: #A52A2A; roughness : 0.1" scale="0.04 0.04 0.04" ></a-entity>
+
+    <!--the sheep-->
+    <a-entity rotation="180 90 180" position="9 0 9" obj-model="obj: #sheep-obj; mtl: #cow-mtl" material="color: #BC8F8F; roughness : 0.1" scale="0.1 0.1 0.1" ></a-entity>
+
+
+    <!--text-->
+    <a-text value="Relaxing Farm" position="-150 60 -100" width="1000" color="white"></a-text>
+
+</a-scene>
+
+
+
+</body>
+
+</html>
